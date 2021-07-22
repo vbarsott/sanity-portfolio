@@ -14,28 +14,33 @@ The following technologies were used to develop this website:
 
 ## 💻 What was installed?
 
-    # create-react-app starter
-    1.
+# GitHub setup
+
+    echo "# sanity-portfolio" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/vbarsott/sanity-portfolio.git
+    git push -u origin main
+
+# React setup
+
     npx create-react-app sanity-portfolio
-    2.
     cd sanity-portfolio/
-    3.
     npm start
+    npm i react-router-dom
+    npm i react-social-icons
 
-    ├── npm react-router-dom
-    ├── npm react-social-icons
-    ├── npm i @sanity/client
-    ├── npm i @sanity/block-content-to-react
-    ├── npm i @sanity/image-url
+# Sanity.io setup
 
-## 💻 Sanity.io setup
-
-    ├── sanity init (PS: considering sanity alredy installed)
-    ├── project name: studio
-    ├── sanity start (redirected to localhost:3333)
-    ├── npm i @sanity/client
-    ├── Add CORS origin: http://localhost:3000 (sanity.io website)
-    2.
+    sanity init (PS: considering sanity alredy installed)
+    project name: studio
+    sanity start (redirected to localhost:3333)
+    npm i @sanity/client
+    npm i @sanity/block-content-to-react
+    npm i @sanity/image-url
+    Add CORS origin: http://localhost:3000 (sanity.io website)
 
 ## 💫 Deploy with Netlify
 
