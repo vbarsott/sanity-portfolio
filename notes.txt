@@ -1,0 +1,64 @@
+Guide Notes
+
+Traversy React Tutorial 2020 Blog with sanity.io
+https://www.youtube.com/watch?v=NO7_jgzVgbc&list=PLillGF-RfqbY3c2r0htQyVbDJJoBFE6Rb&index=34&t=3852s
+
+Install (terminal 1):
+- npx create-react-app name (clean up extra files)
+- npm start
+- http://localhost:3333
+- npm i react-router-dom
+- npm i react-social-icons
+- npm i @sanity/block-content-to-react
+
+Directory structure:
+- portfolio
+  - src
+    - components
+- studio
+
+Sanity (terminal 2):
+- npm install -g @sanity/cli (if not installed)
+- sanity login (to make sure we're logged => this will show a message: Login successful on sanity's page)
+- sanity init (will initialize a new project)
+  - name: studio
+  - configuration: yes
+  - path: 
+  - template: Blog
+- Go to studio directory
+- sanity start
+- http://localhost:3333 - login with GitHub
+
+Sanity package client (terminal 3):
+- npm i @sanity/client
+- open a new file (inside src) called client.js and put:
+  import sanityClient from '@sanity/client';
+  export default sanityClient({
+    projectId: '79m3opda',
+    dataset: 'production',
+  });
+  Find these 2 info inside studio/sanity.json or on the link below
+  https://www.sanity.io/login?origin=https%3A%2F%2Fwww.sanity.io%2Fmanage
+
+Make sure to include a new CORS origin on sanity:
+- Go to https://www.sanity.io/login?origin=https%3A%2F%2Fwww.sanity.io%2Fmanage
+- Select the project (studio)
+- Find settings => CORS origins => Add CORS origin => http://localhost:3000
+This will allow the communication between React and Sanity
+
+Tailwind CSS:
+- Get the url to import from Tailwind installation instructions:
+  https://tailwindcss.com/docs/installation
+- include the url on index.css file (inside src)
+  @import url('https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css');
+- Use Google fonts and import on index.css too:
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;600&display=swap');
+
+Netlify:
+- Create a _redirects file inside public folder and put:
+  /* /index.html 200
+- Go to Netlify (https://www.netlify.com/)
+- Create a new site
+- On domain settings=>options change the site name to:
+  vanessareactsanityportfolio
+- Turn off sanity (kill) and run: sanity deploy

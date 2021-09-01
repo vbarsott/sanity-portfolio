@@ -14,7 +14,7 @@ The following technologies were used to develop this website:
 
 ## 💻 What was installed?
 
-# GitHub setup
+### GitHub setup
 
     echo "# sanity-portfolio" >> README.md
     git init
@@ -24,7 +24,7 @@ The following technologies were used to develop this website:
     git remote add origin https://github.com/vbarsott/sanity-portfolio.git
     git push -u origin main
 
-# React setup
+### React setup
 
     npx create-react-app sanity-portfolio
     cd sanity-portfolio/
@@ -32,7 +32,7 @@ The following technologies were used to develop this website:
     npm i react-router-dom
     npm i react-social-icons
 
-# Sanity.io setup
+### Sanity.io setup
 
     sanity init (PS: considering sanity alredy installed)
     project name: studio
