@@ -54,11 +54,17 @@ Tailwind CSS:
 - Use Google fonts and import on index.css too:
   @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@400;600&display=swap');
 
-Netlify:
-- Create a _redirects file inside public folder and put:
-  /* /index.html 200
+Deploy with Netlify and GitHub:
+- Create a _redirects file (inside public folder) and put: /* /index.html 200
+- Commit and push everything (GitHub)
 - Go to Netlify (https://www.netlify.com/)
-- Create a new site
-- On domain settings=>options change the site name to:
-  vanessareactsanityportfolio
-- Turn off sanity (kill) and run: sanity deploy
+  - Create a new site (if not created yet)
+  - Change the site name: domain settings => options => edit the name to: vanessareactsanityportfolio
+  This generates: https://vanessareactsanityportfolio.netlify.app
+- Go to studio folder and kill http://localhost:3000
+- Run: sanity deploy (hostname: vanessaportfolio)
+  This generates: https://vanessaportfolio.sanity.studio/
+- On Sanity manage (https://www.sanity.io/manage) go to:
+    studio => settings => api => add new origin:
+    https://vanessareactsanityportfolio.netlify.app
+    This will generate the connection between Netlify and Sanity
